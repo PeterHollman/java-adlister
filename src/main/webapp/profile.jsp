@@ -10,17 +10,9 @@
 <body>
     <jsp:include page="partials/navbar.jsp" />
 
-    <%
-        String message = null;
-        String sessionID = null;
-        Cookie[] cookies = request.getCookies();
-        if(cookies != null){
-            for(Cookie cookie : cookies){
-                if(cookie.getName().equals("message")) message = cookie.getValue();
-                if(cookie.getName().equals("JSESSIONID")) sessionID = cookie.getValue();
-            }
-        }
-    %>
+    <div class="container">
+        <h1>Welcome, ${sessionScope.user}!</h1>
+    </div>
 
 </body>
 </html>
